@@ -25,7 +25,7 @@ jobs:
           java-version: "21"
       # The pinned runtime comes from public Packman; no credentials are used.
       - name: Build and test
-        run: '& "$env:GITHUB_WORKSPACE\gradlew.bat" build test'
+        run: '& "$env:GITHUB_WORKSPACE\gradlew.bat" releaseArchive -Parch=win64'
       - name: Upload release ZIP
         uses: actions/upload-artifact@v4
         with:
