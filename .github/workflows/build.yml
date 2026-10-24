@@ -26,9 +26,9 @@ jobs:
       # The pinned runtime comes from public Packman; no credentials are used.
       - name: Build and test
         run: '& "$env:GITHUB_WORKSPACE\gradlew.bat" build test'
-      - name: Upload JAR Artifact
+      - name: Upload release ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: rtx-remix-minecraft-jar
-          path: build/libs/*.jar
+          name: rtx-remix-minecraft-release
+          path: build/distributions/*.zip
           if-no-files-found: error
